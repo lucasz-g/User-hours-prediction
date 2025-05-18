@@ -1,0 +1,11 @@
+POST http://127.0.0.1:8000/users/ 
+Content-Type: application/json
+
+{
+  "username": "adriano",
+  "email": "adriano@email.com",
+  "password": "Senha123",
+  "age": 38,
+  "gender": "MALE",
+  "number_of_kids": 0
+}

@@ -1,0 +1,11 @@
+.subtitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+    color: #575F6E;
+}
+
+.subtitulo p {
+    white-space: pre-line;
+  }

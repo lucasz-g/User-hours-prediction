@@ -1,0 +1,34 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem 0rem;
+    width: 100%;
+    max-width: 50rem; /* aumenta a largura total para comportar 2 colunas */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formItem {
+    width: calc(50% - 1rem); /* duas colunas com espaço entre */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form input {
+    width: 100%;
+    margin-bottom: 1rem;
+}

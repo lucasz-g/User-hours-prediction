@@ -1,0 +1,12 @@
+.titulo {
+    display: flex;
+    margin: 4rem 0rem 0rem 0rem;
+    padding: 0;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}

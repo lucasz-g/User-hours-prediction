@@ -1,0 +1,30 @@
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.select {
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    appearance: none; /* remove estilo padrão do select */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16px" height="16px"><polyline points="6 9 12 15 18 9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* posição do ícone */
+    background-size: 12px; /* tamanho do ícone */
+}
+
+.select:focus {
+    border-bottom: 2px solid #3498db;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
+}

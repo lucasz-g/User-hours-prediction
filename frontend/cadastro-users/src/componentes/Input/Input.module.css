@@ -1,0 +1,31 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 80%;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.inputField {
+    padding: 0.8rem;
+    width: 100%;
+    font-size: 1rem;
+    border: none; /* Remove todas as bordas */
+    border-bottom: 2px solid #ddd; /* Adiciona apenas a linha inferior */
+    transition: all 0.3s ease;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.inputField:focus {
+    border-bottom: 2px solid #3498db; /* Altera a cor da linha ao focar */
+    outline: none;
+    box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2); /* Adiciona um leve efeito */
+}
+
+.label {
+    font-size: 14px;
+    color: #242426;
+    font-family: 'Poppins', sans-serif;
+}
