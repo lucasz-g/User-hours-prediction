@@ -15,8 +15,6 @@ database = []
 @app.post('/users/', status_code=HTTPStatus.CREATED, response_model=UserPublic)
 async def create_user(user: UserSchema):
     """
-    Cria um novo usuário e o adiciona ao banco de dados simulado.
-
     Args:
         - user: Dados do usuário a ser criado (username, email, password).
     

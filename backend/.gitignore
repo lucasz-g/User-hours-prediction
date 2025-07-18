@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+*.sqlite3
+*.db
+
+# FastAPI
+instance/
+*.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Data Science
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# VS Code
+.vscode/
+
+# React frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.next/
+frontend/dist/
+frontend/yarn.lock
+frontend/package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# General
+*.bak
+*.swp
+*.tmp

@@ -14,8 +14,13 @@ export default function Form() {
     const [genero, setGenero] = useState('');
     const [quantidadeFilhos, setQuantidadeFilhos] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (senha.length < 8 || !/[A-Z]/.test(senha) || !/[0-9]/.test(senha)) {
+            alert("A senha deve ter pelo menos 8 caracteres, uma letra maiúscula e um número.");
+            return;
+        }
 
         const idade = calcularIdade(dataNascimento);
         const erroFilhos = validarFilhos(quantidadeFilhos);
@@ -35,30 +40,35 @@ export default function Form() {
                 number_of_kids: quantidadeFilhos
             };
 
-            const response = axios.post('http://localhost:8000/users', payload);
+            const response = await axios.post('http://localhost:8000/users', payload);
+
+            console.log("Dados enviados:", payload);
             console.log("Resposta do servidor:", response.data);
+
+            if (response.status !== 201) {
+                throw new Error("Erro ao cadastrar usuário");
+            }
+
             alert("Usuário cadastrado com sucesso!");
 
-            // Limpar os campos após o envio
+            // Limpar os campos
             setNome('');
             setEmail('');
             setSenha('');
             setDataNascimento('');
             setGenero('');
             setQuantidadeFilhos('');
-        } catch (error) {
-            console.error("Erro ao cadastrar usuário:", error);
-            alert("Erro ao cadastrar usuário. Tente novamente.");
-        }
 
-        console.log("Nome:", nome);
-        console.log("Email:", email);
-        console.log("Senha:", senha);
-        console.log("Data de Nascimento:", dataNascimento);
-        console.log("Idade:", idade);
-        console.log("Gênero:", genero);
-        console.log("Filhos:", quantidadeFilhos);
-    }
+        } catch (error) {
+            if (error.response && error.response.status === 422) {
+                console.error("Erro de validação:", error.response.data);
+                alert("Erro de validação: " + JSON.stringify(error.response.data.detail));
+            } else {
+                console.error("Erro ao cadastrar usuário:", error);
+                alert("Erro ao cadastrar usuário. Tente novamente.");
+            }
+        }
+    };
 
     const calcularIdade = (dataNascimento) => {
         const dataAtual = new Date();
